@@ -6,6 +6,8 @@ import net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Component.TextComponent;
 import net.cubespace.lib.Chat.MessageBuilder.ChatAPI.ComponentSerializer;
 import net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent;
 import net.cubespace.lib.Chat.MessageBuilder.ClickEvent.IClickEvent;
+import net.minecraft.server.v1_7_R1.ChatSerializer;
+import net.minecraft.server.v1_7_R1.PacketPlayOutChat;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_7_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
@@ -255,7 +257,8 @@ public class ComponentBuilderBuilder implements IMessageBuilder {
     @Override
     public void send(CommandSender sender) {
         if (sender instanceof Player) {
-            ((CraftPlayer) sender).sendRawMessage(ComponentSerializer.toString(fromLegacyText(message)));
+            PacketPlayOutChat packet = new PacketPlayOutChat(ChatSerializer.a(ComponentSerializer.toString(fromLegacyText(message))), true);
+            ((CraftPlayer) sender).getHandle().playerConnection.sendPacket(packet);
         } else {
             sender.sendMessage(ComponentSerializer.toString(fromLegacyText(message)));
         }
