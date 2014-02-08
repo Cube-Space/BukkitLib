@@ -37,8 +37,6 @@ public class CubespacePlugin extends JavaPlugin {
     private PermissionManager permissionManager;
     private BindManager bindManager;
 
-    public CubespacePlugin() { }
-
     public void onEnable() {
         getPluginMessageManager("CubespaceLibrary").finish();
     }
