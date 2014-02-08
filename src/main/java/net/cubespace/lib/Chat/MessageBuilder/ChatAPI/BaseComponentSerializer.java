@@ -1,8 +1,8 @@
 package net.cubespace.lib.Chat.MessageBuilder.ChatAPI;
 
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonSerializationContext;
+import org.bukkit.craftbukkit.libs.com.google.gson.JsonDeserializationContext;
+import org.bukkit.craftbukkit.libs.com.google.gson.JsonObject;
+import org.bukkit.craftbukkit.libs.com.google.gson.JsonSerializationContext;
 import net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Component.BaseComponent;
 import net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent;
 import net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.HoverEvent;
