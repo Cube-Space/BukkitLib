@@ -10,7 +10,7 @@ public class ClickEvent implements IClickEvent {
 
     static {
         try {
-            Class.forName("net.md_5.bungee.api.chat.ClickEvent");
+            Class.forName("org.bukkit.craftbukkit.v1_7_R1.entity.CraftPlayer");
             useClickEvent = true;
         } catch (ClassNotFoundException e) {
             useClickEvent = false;
