@@ -1,6 +1,5 @@
 package net.cubespace.lib.Chat.MessageBuilder.ClickEvent;
 
-import net.md_5.bungee.api.chat.ClickEvent;
 
 /**
  * @author geNAZt (fabian.fassbender42@googlemail.com)
@@ -21,24 +20,24 @@ public class BungeeClickEvent implements IClickEvent {
 
     @Override
     public Object get() {
-        ClickEvent.Action eventAction = ClickEvent.Action.SUGGEST_COMMAND;
+        net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent.Action eventAction = net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent.Action.SUGGEST_COMMAND;
 
         if(action.equals(ClickAction.OPEN_FILE)) {
-            eventAction = ClickEvent.Action.OPEN_FILE;
+            eventAction = net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent.Action.OPEN_FILE;
         }
 
         if(action.equals(ClickAction.OPEN_URL)) {
-            eventAction = ClickEvent.Action.OPEN_URL;
+            eventAction = net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent.Action.OPEN_URL;
         }
 
         if(action.equals(ClickAction.RUN_COMMAND)) {
-            eventAction = ClickEvent.Action.RUN_COMMAND;
+            eventAction = net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent.Action.RUN_COMMAND;
         }
 
         if(action.equals(ClickAction.SUGGEST_COMMAND)) {
-            eventAction = ClickEvent.Action.SUGGEST_COMMAND;
+            eventAction = net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent.Action.SUGGEST_COMMAND;
         }
 
-        return new ClickEvent(eventAction, value);
+        return new net.cubespace.lib.Chat.MessageBuilder.ChatAPI.Event.ClickEvent(eventAction, value);
     }
 }
