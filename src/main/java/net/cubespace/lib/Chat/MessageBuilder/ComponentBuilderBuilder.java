@@ -257,6 +257,7 @@ public class ComponentBuilderBuilder implements IMessageBuilder {
     @Override
     public void send(CommandSender sender) {
         if (sender instanceof Player) {
+            System.out.println(ComponentSerializer.toString(fromLegacyText(message)));
             PacketPlayOutChat packet = new PacketPlayOutChat(ChatSerializer.a(ComponentSerializer.toString(fromLegacyText(message))), true);
             ((CraftPlayer) sender).getHandle().playerConnection.sendPacket(packet);
         } else {
