@@ -1,7 +1,7 @@
 package net.cubespace.lib.Chat.MessageBuilder;
 
 import net.cubespace.lib.Chat.MessageBuilder.ClickEvent.IClickEvent;
-import net.md_5.bungee.api.CommandSender;
+import org.bukkit.command.CommandSender;
 
 import java.util.HashMap;
 import java.util.Map;
