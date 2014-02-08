@@ -1,0 +1,5 @@
+name: BungeeLib
+main : net.cubespace.lib.BukkitLibPlugin
+version: ${version}
+author: geNAZt
+depends: [Yamler]
