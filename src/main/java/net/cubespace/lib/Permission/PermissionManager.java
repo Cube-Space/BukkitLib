@@ -45,6 +45,8 @@ public class PermissionManager {
     public boolean has(CommandSender sender, String permission) {
         boolean useStorage = permissionStorageHashMap.containsKey(sender.getName());
 
+        permission = permission.substring(prefix.length());
+
         StringBuilder sb = new StringBuilder();
         sb.append(prefix);
         for(int i = 0; i < permission.length(); i++) {
@@ -52,6 +54,8 @@ public class PermissionManager {
 
             if ((useStorage && permissionStorageHashMap.get(sender.getName()).has(permission)) || sender.hasPermission(check)) {
                 return true;
+            } else {
+                sb.append(permission.charAt(i));
             }
         }
 
